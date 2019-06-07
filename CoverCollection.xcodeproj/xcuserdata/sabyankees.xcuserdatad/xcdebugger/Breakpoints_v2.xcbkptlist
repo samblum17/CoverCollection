@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoverCollection/AlbumArtOptionsViewController.swift"
+            timestampString = "566724907.466836"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "AlbumArtOptionsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoverCollection.AlbumArtOptionsViewController.selectedAlbum.getter : Swift.Optional&lt;CoverCollection.AlbumCover&gt;"
+                  moduleName = "CoverCollection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sabyankees/School%20/Coding%20with%20Swift/CoverCollection/CoverCollection/AlbumArtOptionsViewController.swift"
+                  timestampString = "563000600.5555069"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "171">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoverCollection.AlbumArtOptionsViewController.selectedAlbum.setter : Swift.Optional&lt;CoverCollection.AlbumCover&gt;"
+                  moduleName = "CoverCollection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sabyankees/School%20/Coding%20with%20Swift/CoverCollection/CoverCollection/AlbumArtOptionsViewController.swift"
+                  timestampString = "563000600.558014"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "223">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoverCollection.AlbumArtOptionsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CoverCollection.AlbumArtOptionsViewController"
+                  moduleName = "CoverCollection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sabyankees/School%20/Coding%20with%20Swift/CoverCollection/CoverCollection/AlbumArtOptionsViewController.swift"
+                  timestampString = "563000600.560227"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoverCollection.AlbumArtOptionsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CoverCollection.AlbumArtOptionsViewController&gt;"
+                  moduleName = "CoverCollection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sabyankees/School%20/Coding%20with%20Swift/CoverCollection/CoverCollection/AlbumArtOptionsViewController.swift"
+                  timestampString = "563000600.564077"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
