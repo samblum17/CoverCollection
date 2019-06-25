@@ -39,7 +39,6 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
         //Change adUnitID when ready to deploy to App Store
         bannerView.adUnitID = "ca-app-pub-3264342285166813/9747755757"
         bannerView.rootViewController = self
-        bannerView.adSize = kGADAdSizeFluid
         let request = GADRequest()
         bannerView.load(request)
 

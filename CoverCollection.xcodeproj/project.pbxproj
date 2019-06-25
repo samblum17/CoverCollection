@@ -380,7 +380,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA26A524C2C9DC9EEE636A0B /* Pods-CoverCollection.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AXQRK9KY57;
 				INFOPLIST_FILE = CoverCollection/Info.plist;
@@ -399,7 +399,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8A09DD0C1F33D17FD7CDF2F3 /* Pods-CoverCollection.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AXQRK9KY57;
 				INFOPLIST_FILE = CoverCollection/Info.plist;
