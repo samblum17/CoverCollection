@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMobileAds
+
 
 //Searches for album covers
 class SearchTableViewController: UITableViewController, UINavigationControllerDelegate {
@@ -15,12 +17,12 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
     @IBOutlet var newAlbumSearchBar: UISearchBar!
     var activityIndicatorView: UIActivityIndicatorView!
     let imageCache = NSCache<AnyObject, AnyObject>() //Cache images for faster loading
-
+    @IBOutlet var bannerView: GADBannerView!
     
 //Array to hold search results
     var searchItems = [AlbumCover]()
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +34,18 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
         
     //Swipe down on keyboard to dismiss
         tableView.keyboardDismissMode = .interactive
+        
+    //Set up ads
+        //Change adUnitID when ready to deploy to App Store
+        bannerView.adUnitID = "ca-app-pub-3264342285166813/9747755757"
+        bannerView.rootViewController = self
+        bannerView.adSize = kGADAdSizeFluid
+        let request = GADRequest()
+        bannerView.load(request)
 
     }
+    
+    
 
     let itemController = StoreItemController()
     
