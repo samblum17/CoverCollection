@@ -29,6 +29,8 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
     @IBOutlet var emptyCollectionLabel: UILabel!
 //Holds album covers in array
     static var albumCollection: [AlbumCover] = []
+    let imageCache = NSCache<AnyObject, AnyObject>() //Cache image for faster loading
+
 //User default declaration (used for style preferences not saving collection)
     let defaults = UserDefaults.standard
     
@@ -41,6 +43,7 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
         collectionView.dataSource = self
         navigationItem.rightBarButtonItem = editButtonItem
         showEmptyView()
+        
 //Loads collection and saves
         if let savedCollection = AlbumCover.loadCollection() {
             AlbumCollectionViewController.albumCollection = savedCollection
@@ -86,15 +89,46 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
 //Loads album art from API
     func fetchImage(url: URL, completion: @escaping (UIImage?) ->
         Void) {
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let data = data,
-                let image = UIImage(data: data) {
+//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+//            if let data = data,
+//                let image = UIImage(data: data) {
+//                completion(image)
+//            } else {
+//                completion(nil)
+//            }
+//        }
+        
+        
+        //Check if image is cached, load in if so
+        if let imageFromCache = imageCache.object(forKey: url as AnyObject) as? UIImage {
+            //Highest priority queue
+            DispatchQueue.main.async {
+                let image = imageFromCache
                 completion(image)
-            } else {
-                completion(nil)
             }
+            //Image not cached, so pull from web, cache, and display
+        } else {
+            let task = URLSession.shared.dataTask(with: url) { (data,response, error) in
+                
+                guard let imageData = data else {
+                    return
+                }
+                //Highest priority queue
+                DispatchQueue.main.async {
+                    let imageToCache = UIImage(data: data!)
+                    self.imageCache.setObject(imageToCache!, forKey: url as AnyObject)
+                    completion (imageToCache)
+                }
+                
+                
+            }
+        
+            task.resume()
+
         }
-        task.resume()
+        
+        
+        
     }
 
 //Return 1 section with x number of items in section (determined in next method)

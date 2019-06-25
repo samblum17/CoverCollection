@@ -13,6 +13,9 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
 
 //Outlets and objects
     @IBOutlet var newAlbumSearchBar: UISearchBar!
+    var activityIndicatorView: UIActivityIndicatorView!
+    let imageCache = NSCache<AnyObject, AnyObject>() //Cache images for faster loading
+
     
 //Array to hold search results
     var searchItems = [AlbumCover]()
@@ -39,7 +42,7 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
         
         self.searchItems = []
         self.tableView.reloadData()
-
+        
         let searchTerm = newAlbumSearchBar.text ?? ""
         
         if !searchTerm.isEmpty {
@@ -58,7 +61,16 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
                 DispatchQueue.main.async {
                     if let searchItems = searchItems {
                         self.searchItems = searchItems
+                        self.activityIndicatorView.stopAnimating()
+                        self.tableView.separatorStyle = .singleLine
                         self.tableView.reloadData()
+                        
+                        //When no results, show alert message
+                        if self.searchItems.count == 0 {
+                            let alertController = UIAlertController(title: "No results", message: "No parks to display. Either the park you searched for was spelled incorrectly or network connection was lost. Please try again or check the NPS website for more info.", preferredStyle: .alert)
+                            alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                            self.present(alertController, animated: true, completion: nil)
+                        }
                     }  else {
                         print ("Unable to reload")
                     }
@@ -79,24 +91,32 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
         cell.detailTextLabel?.text = item.artist
         //Placeholder loading image
         cell.imageView?.image = #imageLiteral(resourceName: "NewSolid_gray")
-    
-        //Album cover image loaded
-        let task = URLSession.shared.dataTask(with: item.artworkURL) { (data,response, error) in
-            
-            guard let imageData = data else {
-                return
-            }
-            
+        
+        //Set actual album art image from cache
+        if let imageFromCache = imageCache.object(forKey: item.artworkURL as AnyObject) as? UIImage {
             DispatchQueue.main.async {
-                
-                let image = UIImage(data: imageData)
-                cell.imageView?.image = image
+                cell.imageView?.image = imageFromCache
             }
-            
-        }
+            //If not found in cache, pull from web, cache, and load into cell
+        } else {
+            let task = URLSession.shared.dataTask(with: item.artworkURL) { (data,response, error) in
+                
+                guard let imageData = data else {
+                    return
+                }
+                
+                //Highest priority queue
+                DispatchQueue.main.async {
+                    
+                    let imageToCache = UIImage(data: imageData)
+                    self.imageCache.setObject(imageToCache!, forKey: item.artworkURL as AnyObject)
+                    cell.imageView?.image = imageToCache
+                }
+            }
+        
         task.resume()
      
-        
+        }
     }
     
     // MARK: - Table view data source
@@ -154,13 +174,24 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
             popoverController.permittedArrowDirections = [] //to hide the arrow of any particular direction
         }
     }
+    
+//Load network indicator on background view
+    override func loadView() {
+        super.loadView()
+        
+        activityIndicatorView = UIActivityIndicatorView(style: .gray)
+        
+        tableView.backgroundView = activityIndicatorView
+    }
+
 }
 
 //Allows searching when search button tapped on keyboard
 extension SearchTableViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ newAlbumSearchBar: UISearchBar) {
-        
+        activityIndicatorView.startAnimating()
+        tableView.separatorStyle = .none
         fetchMatchingItems()
         newAlbumSearchBar.resignFirstResponder()
     }
