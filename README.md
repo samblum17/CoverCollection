@@ -1,4 +1,4 @@
-# CoverCollection
+# Cover Collection
 ###### Your personal album art collection
 This project is live on the iOS App Store- [Click to download](https://apps.apple.com/us/app/cover-collection/id1448067875).
 
@@ -6,7 +6,7 @@ This project is live on the iOS App Store- [Click to download](https://apps.appl
 Cover Collection is my debut app for the App Store. I came up with the idea for Cover Collection when I came across the burden of creating an album art collage through word processing applications on my laptop. This is my solution for other music lovers to create their own personal collage of their favorite album artwork easily.
 Use Cover Collection to:
 
-- Collect and personalize any album artwork from iTunes into one collection
+- Collect and personalize any album artwork from the Apple Music catalog into one collection
 - Reorder album covers to match your style
 - Access your music library to play albums directly within Cover Collection and create a queue
 - Screenshot your collection and use as your wallpaper
