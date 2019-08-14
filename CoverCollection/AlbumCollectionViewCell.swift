@@ -23,6 +23,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     @IBOutlet var albumTitleLabel: UILabel!
     @IBOutlet var deleteButtonBackgroundView: UIVisualEffectView!
     var urlString = ""
+    
 //Method to remove album from collection programatticaly
     var deleteButtonSet: String! {
         didSet{
@@ -43,6 +44,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
 //Accesses delegate to delete cell when button tapped
     @IBAction func deleteButtonPressed(_ sender: Any) {
         delegate?.delete(cell: self)
+        
     }
 }
 

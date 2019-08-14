@@ -42,13 +42,14 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
         collectionView.delegate = self
         collectionView.dataSource = self
         navigationItem.rightBarButtonItem = editButtonItem
-        showEmptyView()
-        
 //Loads collection and saves
         if let savedCollection = AlbumCover.loadCollection() {
             AlbumCollectionViewController.albumCollection = savedCollection
         }
-       checkForStylePreferences()
+                
+        checkForStylePreferences()
+        showEmptyView()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -105,6 +106,7 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
             DispatchQueue.main.async {
                 let image = imageFromCache
                 completion(image)
+                return
             }
             //Image not cached, so pull from web, cache, and display
         } else {
@@ -146,7 +148,6 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
 //Assigns cell objects to corresponding album cover
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumCollectionViewCell
-        
         let albumCover = AlbumCollectionViewController.albumCollection[indexPath.row]
 //Uncomment below line for debugging
 //        print(albumCover.albumTitle)
