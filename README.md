@@ -28,3 +28,5 @@ This application was designed, developed, and tested entirely and solely by Sam 
 ## Acknowledgments
 This is my first completely self-built iOS App, and it was a long road to get here. There were obstacles but it's in these times of failure that we learn the most and truly shine. I'd like to thank Apple for giving creatives the opportunity to display their work to the world and as always for their extremely helpful resources on learning the fundamentals of Swift and Xcode. Additionally I'd like to thank the entire developer community for always being repsonsive to online forums and personal DMs on Twitter. And finally I'd like to thank my family for always pushing me to continue learning and developing even when it gets tough.
 Regardless of how Cover Collection performs on the App Store, I plan on creating and deploying many more apps for years to come.
+
+//Note that this repository will not show commits from iOS 13 and onward. Please contact the developer for questions regarding Version 3.0+ and iOS 13 integration.
