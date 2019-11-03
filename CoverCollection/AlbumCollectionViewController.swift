@@ -148,9 +148,11 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
 //Assigns cell objects to corresponding album cover
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumCollectionViewCell
+        cell.deleteButtonBackgroundView.isHidden = true
         let albumCover = AlbumCollectionViewController.albumCollection[indexPath.row]
 //Uncomment below line for debugging
 //        print(albumCover.albumTitle)
+
         fetchImage(url: albumCover.artworkURL)
         { (image) in
             guard let image = image else { return }
@@ -201,7 +203,11 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
         mediaPicker.dismiss(animated: true, completion: nil)
         
     }
+    
+    //MARK- PRE-IOS13 CODE USED FOR MANUAL DARK MODE 
 //Variable used for dark mode configuring (prior to iOS 13)
+    /*For ios13 dark mode compatibility- natively switches now that
+     deployment is set. Keep manual option active too*/
 static var isOn: Bool = true
 
 //Toggle dark mode (prior to iOS 13)
@@ -249,7 +255,7 @@ static var isOn: Bool = true
     func saveStylePreferences() {
         defaults.set(AlbumCollectionViewController.isOn, forKey: "saveDarkMode")
     }
- 
+
 
     func checkForStylePreferences() {
         let prefersDarkMode = defaults.bool(forKey: "saveDarkMode")
