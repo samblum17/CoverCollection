@@ -14,7 +14,7 @@ Use Cover Collection to:
 - Be yourself. Cover Collection is the first app on the App Store that allows you to reorganize only the album covers you want to view in one place.
 
 ## Prerequisites
-Cover Collection is an iOS Application that is designed to run on iOS devices running iOS 12+. 
+Cover Collection is an iOS Application that is designed to run on iOS devices running iOS 12+ and Macs with Apple silicon.
 
 ## Installing and Testing
 Cover Collection is available on the iOS App Store. It can be downloaded directly from your iOS device running iOS 12+ [here](https://apps.apple.com/us/app/cover-collection/id1448067875). Testing of this application can be done in the Xcode iOS Simulator or Xcode 11 live preview. Download all project files onto a Mac running macOS Mojave or later.
