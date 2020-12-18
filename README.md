@@ -1,4 +1,5 @@
 <img src="https://github.com/samblum17/CoverCollection/blob/master/CoverCollection/Assets.xcassets/CCMarketing.png?raw=true">
+
 [Download today on the App Store](https://apps.apple.com/us/app/cover-collection/id1448067875)
 
 ## Description
