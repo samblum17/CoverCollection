@@ -117,7 +117,7 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
                 }
                 //Highest priority queue
                 DispatchQueue.main.async {
-                    let imageToCache = UIImage(data: data!)
+                    let imageToCache = UIImage(data: imageData)
                     self.imageCache.setObject(imageToCache!, forKey: url as AnyObject)
                     completion (imageToCache)
                 }
@@ -186,12 +186,11 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
     @IBAction func playButtonTapped(_ sender: Any) {
         let mediaPickerVC = MPMediaPickerController(mediaTypes: .music)
         mediaPickerVC.popoverPresentationController?.sourceView = view
-        mediaPickerVC.allowsPickingMultipleItems = true
+        mediaPickerVC.allowsPickingMultipleItems = false
         mediaPickerVC.showsCloudItems = true
         mediaPickerVC.delegate = self
         mediaPickerVC.prompt = "Create a queue of songs and albums"
-        present(mediaPickerVC, animated: true, completion: nil)
-        
+        present(mediaPickerVC, animated: true, completion: nil)        
     }
     
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {

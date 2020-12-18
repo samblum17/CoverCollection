@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SNy-WH-Ack">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SNy-WH-Ack">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,9 +14,9 @@
             <objects>
                 <collectionViewController id="I7E-E7-odc" customClass="AlbumCollectionViewController" customModule="CoverCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="1I4-QR-Ir4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="2" sectionInsetReference="safeArea" id="sfJ-wp-Bfq">
                             <size key="itemSize" width="122" height="122"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -22,7 +24,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <view key="backgroundView" contentMode="scaleToFill" id="42w-47-iN3">
-                            <rect key="frame" x="0.0" y="-44" width="375" height="667"/>
+                            <rect key="frame" x="0.0" y="-88" width="414" height="896"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Search an album to start  your collection..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rE-T5-5Qx">
@@ -48,12 +50,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3a-SO-QX5">
-                                            <rect key="frame" x="11.5" y="130" width="99" height="21"/>
+                                            <rect key="frame" x="12" y="130" width="98" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aed-MV-nZT">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aed-MV-nZT">
                                             <rect key="frame" x="2" y="30" width="120" height="92"/>
                                             <state key="normal" title="Button"/>
                                             <connections>
@@ -62,13 +64,13 @@
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="NewSolid_gray" translatesAutoresizingMaskIntoConstraints="NO" id="BHz-Bp-BrW">
                                             <rect key="frame" x="0.0" y="0.0" width="122" height="122"/>
+                                            <viewLayoutGuide key="safeArea" id="fsT-M3-PSx"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="122" id="GQY-qb-QJm"/>
                                                 <constraint firstAttribute="width" constant="122" id="NC9-Ld-Yd7"/>
                                             </constraints>
-                                            <viewLayoutGuide key="safeArea" id="fsT-M3-PSx"/>
                                         </imageView>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJt-vX-UqO">
+                                        <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="QJt-vX-UqO">
                                             <rect key="frame" x="2" y="2" width="20" height="20"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FgW-0I-OVQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -79,7 +81,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="tZX-05-eNh"/>
                                                         </constraints>
-                                                        <state key="normal" image="37-372633_remove-button-delete-denied-red-round-cancel-no"/>
+                                                        <state key="normal" image="updated_delete"/>
                                                         <connections>
                                                             <action selector="deleteButtonPressed:" destination="fdf-H5-bvf" eventType="touchUpInside" id="poi-oR-XNZ"/>
                                                         </connections>
@@ -96,9 +98,15 @@
                                                 <constraint firstAttribute="width" constant="20" id="fBS-pm-UY7"/>
                                             </constraints>
                                             <blurEffect style="extraLight"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </visualEffectView>
                                     </subviews>
                                 </view>
+                                <viewLayoutGuide key="safeArea" id="ri6-cU-hYp"/>
                                 <constraints>
                                     <constraint firstItem="Aed-MV-nZT" firstAttribute="bottom" secondItem="BHz-Bp-BrW" secondAttribute="bottom" id="0qi-bF-oqO"/>
                                     <constraint firstItem="QJt-vX-UqO" firstAttribute="leading" secondItem="fdf-H5-bvf" secondAttribute="leading" constant="2" id="78h-RX-wwy"/>
@@ -111,7 +119,6 @@
                                     <constraint firstItem="t3a-SO-QX5" firstAttribute="top" secondItem="Aed-MV-nZT" secondAttribute="bottom" constant="8" symbolic="YES" id="pzb-eL-gmK"/>
                                     <constraint firstItem="QJt-vX-UqO" firstAttribute="top" secondItem="fdf-H5-bvf" secondAttribute="top" constant="2" id="w26-u9-ijX"/>
                                 </constraints>
-                                <viewLayoutGuide key="safeArea" id="ri6-cU-hYp"/>
                                 <size key="customSize" width="122" height="122"/>
                                 <connections>
                                     <outlet property="albumArtImage" destination="BHz-Bp-BrW" id="CNC-Pi-Uv0"/>
@@ -127,8 +134,8 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="My Collection" id="TT9-fi-Kkw">
                         <barButtonItem key="leftBarButtonItem" title="Dark Mode" style="plain" id="YZi-LQ-fnc">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v4n-a8-ieB">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="v4n-a8-ieB">
+                                <rect key="frame" x="20" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Dark Mode"/>
                                 <connections>
@@ -160,11 +167,11 @@
             <objects>
                 <tableViewController id="12B-L4-dUq" customClass="SearchTableViewController" customModule="CoverCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dkM-Tc-Xnb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search albums" id="zMq-f0-FEJ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             <connections>
@@ -172,34 +179,34 @@
                             </connections>
                         </searchBar>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Ifc-W7-SDw" customClass="GADBannerView">
-                            <rect key="frame" x="0.0" y="578.5" width="375" height="51"/>
+                            <rect key="frame" x="0.0" y="856.5" width="414" height="51"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="searchResultCell" textLabel="gQD-Hl-Wmy" detailTextLabel="LaH-ia-AhR" imageView="uXW-hz-q8J" style="IBUITableViewCellStyleSubtitle" id="qzo-W9-ZB2">
-                                <rect key="frame" x="0.0" y="72" width="375" height="55.5"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qzo-W9-ZB2" id="8gD-8o-X8L">
-                                    <rect key="frame" x="0.0" y="0.0" width="348" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gQD-Hl-Wmy">
-                                            <rect key="frame" x="87" y="10" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="91" y="10" width="33" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LaH-ia-AhR">
-                                            <rect key="frame" x="87" y="31.5" width="33" height="14.5"/>
+                                            <rect key="frame" x="91" y="31.5" width="33" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Solid_gray" id="uXW-hz-q8J">
-                                            <rect key="frame" x="16" y="0.0" width="56" height="55.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="56" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -213,8 +220,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Search" id="aDe-X0-KtW">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="IOb-ei-O7h">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ss7-yd-1hw">
-                                <rect key="frame" x="16" y="4.5" width="83" height="35"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ss7-yd-1hw">
+                                <rect key="frame" x="20" y="4.5" width="83" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Help"/>
@@ -240,7 +247,7 @@
                 <navigationController id="qbU-4N-mp6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="BCC-Bq-Nfl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gYc-3D-l9o">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -258,7 +265,7 @@
                     <tabBarItem key="tabBarItem" title="Collection" image="CollectionsTabIcon" selectedImage="CollectionsTabIcon" id="Bpb-yD-Vfu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="MlA-Ye-s8F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -293,9 +300,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="37-372633_remove-button-delete-denied-red-round-cancel-no" width="640" height="640"/>
         <image name="CollectionsTabIcon" width="30" height="30"/>
         <image name="NewSolid_gray" width="200" height="200"/>
         <image name="Solid_gray" width="200" height="200"/>
+        <image name="updated_delete" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

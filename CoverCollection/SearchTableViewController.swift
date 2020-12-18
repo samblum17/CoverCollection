@@ -87,8 +87,6 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
                     }
                 }
             }
-           
-            
             )
     }
     }
@@ -144,11 +142,6 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath)
       
-        
-//        if let albumCollectionVC = self.tabBarController?.viewControllers?.first as? AlbumCollectionViewController {
-//            albumCollectionVC.
-//        }
-
         // Configure the cell...
         configure(cell: cell, forItemAt: indexPath)
         return cell
@@ -157,7 +150,7 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
 //Set up help button
     @IBOutlet var helpButton: UIBarButtonItem!
     @IBAction func helpButtonTapped(_ sender: Any) {
-        let alertController = UIAlertController(title: "Welcome to Cover Collection!", message: "- To start your album cover collection, simply search for an album and select the artwork you would like to add.\n- Searching for an album requires an internet connection.\n- Reorganize your collection by pressing edit. Hold an album cover and drag to the desired location to reorder. Press the x to remove.\n- Set the color scheme to be dark or light mode manually by tapping the button in the upper left corner or automatically with iOS 13 integration based on your current display settings.\n- Tap an album cover to search and play the album straight from the app. Manage playback in control center.\n- More questions? Leave a review on the App Store, and we'd love to help.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Welcome to Cover Collection!", message: "- To start your album cover collection, search for an album and select the artwork you would like to add. Searching for an album requires an internet connection.\n- Reorganize your collection by pressing edit. Hold an album cover and drag to the desired position. Press the red delete button to remove from collection.\n- Set the color scheme manually to dark or light mode by tapping the button in the upper left corner or automatically allow your device to set based on your current display settings.\n- Tap an album cover to search Apple Music and play the album. Manage playback in control center.\n- More questions? Leave a review on the App Store, and we'd love to help.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Thanks", style: .default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
@@ -170,27 +163,34 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
         alertController.addAction(UIAlertAction(title: "Add to My Collection", style: .default, handler: { action in
                 let selectedAlbum = self.searchItems[indexPath.row]
                 AlbumCollectionViewController.albumCollection.append(selectedAlbum)
-                self.tabBarController?.selectedIndex = 0
             }
         ))
         AlbumCover.saveCollection(AlbumCollectionViewController.albumCollection)
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
+                self.dismiss(animated: true, completion: nil)
+            }
+            ))
+            }
         self.present(alertController, animated: true, completion: nil)
         self.tableView.deselectRow(at: indexPath, animated: true)
         if let popoverController = alertController.popoverPresentationController {
             popoverController.sourceView = self.view
-            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0) // you can set this as per your requirement.
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
             popoverController.permittedArrowDirections = [] //to hide the arrow of any particular direction
+
         }
     }
+           
     
 //Load network indicator on background view
     override func loadView() {
         super.loadView()
         
-        activityIndicatorView = UIActivityIndicatorView(style: .gray)
+        activityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
         
         tableView.backgroundView = activityIndicatorView
     }
@@ -207,6 +207,10 @@ extension SearchTableViewController: UISearchBarDelegate {
         newAlbumSearchBar.resignFirstResponder()
     }
 }
+
+
+
+
 
                 //MARK- Unused methods and tests
 

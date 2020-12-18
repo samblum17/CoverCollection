@@ -27,7 +27,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
 //Method to remove album from collection programatticaly
     var deleteButtonSet: String! {
         didSet{
-            albumArtImage.image = UIImage(named: "Cover Image")
+            albumArtImage.image = UIImage(named: "updated_delete")
             deleteButtonBackgroundView.layer.cornerRadius = deleteButtonBackgroundView.bounds.width / 2.0
             deleteButtonBackgroundView.layer.masksToBounds = true
             deleteButtonBackgroundView.isHidden = !isEditing
