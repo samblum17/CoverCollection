@@ -15,7 +15,7 @@
 		E43D07D4218E6D1A0083FC79 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43D07D3218E6D1A0083FC79 /* AlbumCollectionViewCell.swift */; };
 		E4469A7822C2AFA5000B9319 /* Pods-CoverCollection.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AA26A524C2C9DC9EEE636A0B /* Pods-CoverCollection.debug.xcconfig */; };
 		E4469A7922C2AFA8000B9319 /* Pods-CoverCollection.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8A09DD0C1F33D17FD7CDF2F3 /* Pods-CoverCollection.release.xcconfig */; };
-		E4469A7A22C2B1CC000B9319 /* Pods_CoverCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A733F22A35FC94376AD775 /* Pods_CoverCollection.framework */; };
+		E48C42C1258D10A0000653BA /* Pods_CoverCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A733F22A35FC94376AD775 /* Pods_CoverCollection.framework */; };
 		E48D9C30218D24B50032B9BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D9C2F218D24B50032B9BB /* AppDelegate.swift */; };
 		E48D9C35218D24B50032B9BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48D9C33218D24B50032B9BB /* Main.storyboard */; };
 		E48D9C37218D24B60032B9BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48D9C36218D24B60032B9BB /* Assets.xcassets */; };
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4469A7A22C2B1CC000B9319 /* Pods_CoverCollection.framework in Frameworks */,
+				E48C42C1258D10A0000653BA /* Pods_CoverCollection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +299,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -360,6 +361,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

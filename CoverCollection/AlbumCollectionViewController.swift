@@ -186,11 +186,11 @@ class AlbumCollectionViewController: UICollectionViewController, MPMediaPickerCo
     @IBAction func playButtonTapped(_ sender: Any) {
         let mediaPickerVC = MPMediaPickerController(mediaTypes: .music)
         mediaPickerVC.popoverPresentationController?.sourceView = view
-        mediaPickerVC.allowsPickingMultipleItems = false
+        mediaPickerVC.allowsPickingMultipleItems = true
         mediaPickerVC.showsCloudItems = true
         mediaPickerVC.delegate = self
         mediaPickerVC.prompt = "Create a queue of songs and albums"
-        present(mediaPickerVC, animated: true, completion: nil)        
+        present(mediaPickerVC, animated: true, completion: nil)
     }
     
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
