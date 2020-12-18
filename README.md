@@ -1,5 +1,5 @@
 <img src="https://github.com/samblum17/CoverCollection/blob/master/CoverCollection/Assets.xcassets/CCMarketing.png?raw=true">
-This project is live on the iOS App Store. [Download today](https://apps.apple.com/us/app/cover-collection/id1448067875).
+[Download today on the App Store](https://apps.apple.com/us/app/cover-collection/id1448067875)
 
 ## Description
 For all music fans, Cover Collection is the best way to organize your favorite album covers into a single, personalized collection.
