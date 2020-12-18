@@ -15,7 +15,7 @@
 		E43D07D4218E6D1A0083FC79 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43D07D3218E6D1A0083FC79 /* AlbumCollectionViewCell.swift */; };
 		E4469A7822C2AFA5000B9319 /* Pods-CoverCollection.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AA26A524C2C9DC9EEE636A0B /* Pods-CoverCollection.debug.xcconfig */; };
 		E4469A7922C2AFA8000B9319 /* Pods-CoverCollection.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8A09DD0C1F33D17FD7CDF2F3 /* Pods-CoverCollection.release.xcconfig */; };
-		E4469A7A22C2B1CC000B9319 /* Pods_CoverCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A733F22A35FC94376AD775 /* Pods_CoverCollection.framework */; };
+		E48C42C1258D10A0000653BA /* Pods_CoverCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A733F22A35FC94376AD775 /* Pods_CoverCollection.framework */; };
 		E48D9C30218D24B50032B9BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D9C2F218D24B50032B9BB /* AppDelegate.swift */; };
 		E48D9C35218D24B50032B9BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48D9C33218D24B50032B9BB /* Main.storyboard */; };
 		E48D9C37218D24B60032B9BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48D9C36218D24B60032B9BB /* Assets.xcassets */; };
@@ -34,6 +34,7 @@
 		E43D07CF218E68000083FC79 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
 		E43D07D3218E6D1A0083FC79 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4424A6321902C72003E7597 /* AlbumCoverTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AlbumCoverTest.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E4699F2324688CF1001C7A5A /* CoverCollection.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoverCollection.entitlements; sourceTree = "<group>"; };
 		E48D9C2C218D24B50032B9BB /* CoverCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoverCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48D9C2F218D24B50032B9BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E48D9C34218D24B50032B9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4469A7A22C2B1CC000B9319 /* Pods_CoverCollection.framework in Frameworks */,
+				E48C42C1258D10A0000653BA /* Pods_CoverCollection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +94,7 @@
 		E48D9C2E218D24B50032B9BB /* CoverCollection */ = {
 			isa = PBXGroup;
 			children = (
+				E4699F2324688CF1001C7A5A /* CoverCollection.entitlements */,
 				E4424A6321902C72003E7597 /* AlbumCoverTest.playground */,
 				E48D9C33218D24B50032B9BB /* Main.storyboard */,
 				E43D07D3218E6D1A0083FC79 /* AlbumCollectionViewCell.swift */,
@@ -297,6 +299,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -358,6 +361,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -381,15 +385,20 @@
 			baseConfigurationReference = AA26A524C2C9DC9EEE636A0B /* Pods-CoverCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoverCollection/CoverCollection.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AXQRK9KY57;
 				INFOPLIST_FILE = CoverCollection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.myexample.CoverCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -400,15 +409,20 @@
 			baseConfigurationReference = 8A09DD0C1F33D17FD7CDF2F3 /* Pods-CoverCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoverCollection/CoverCollection.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AXQRK9KY57;
 				INFOPLIST_FILE = CoverCollection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.myexample.CoverCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
