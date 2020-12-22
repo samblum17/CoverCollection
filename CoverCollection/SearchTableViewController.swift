@@ -62,7 +62,8 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
             let query = [
                 "term" : searchTerm,
                 "lang" : "en_us",
-                "entity" : "album"
+                "entity" : "album",
+                "limit" : "30"
             ]
             
     // use the item controller to fetch items
@@ -71,7 +72,8 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
     //Searches for covers on highest priority queue
                 DispatchQueue.main.async {
                     if let searchItems = searchItems {
-                        self.searchItems = searchItems
+                        let unsortedArray: [AlbumCover] = searchItems
+                        self.searchItems = self.sortFoundAlbums(key: searchTerm, unsortedArray: unsortedArray)
                         self.activityIndicatorView.stopAnimating()
                         self.tableView.separatorStyle = .singleLine
                         self.tableView.reloadData()
@@ -193,6 +195,38 @@ class SearchTableViewController: UITableViewController, UINavigationControllerDe
         activityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
         
         tableView.backgroundView = activityIndicatorView
+    }
+    
+    //Helper function for faster sorting of results
+    func sortFoundAlbums(key: String, unsortedArray: [AlbumCover]) -> [AlbumCover] {
+        let sorted = unsortedArray.sorted(by: {
+            
+            //Remove all spaces and focus on first term
+            let firstAlbum: String  = $0.albumTitle.lowercased()
+            let secondAlbum: String = $1.albumTitle.lowercased()
+            let lowerKey = key.lowercased()
+
+            //Sort by relevance
+            if firstAlbum == lowerKey && secondAlbum != lowerKey {
+                return true
+            }
+            else if firstAlbum.hasPrefix(lowerKey) && !secondAlbum.hasPrefix(lowerKey)  {
+                return true
+            }
+            else if firstAlbum.hasPrefix(lowerKey) && secondAlbum.hasPrefix(lowerKey)
+                        && firstAlbum.count < secondAlbum.count  {
+                return true
+            }
+            else if firstAlbum.contains(lowerKey) && !secondAlbum.contains(lowerKey) {
+                return true
+            }
+            else if firstAlbum.contains(lowerKey) && secondAlbum.contains(lowerKey)
+                        && firstAlbum.count < secondAlbum.count {
+                return true
+            }
+            return false
+        })
+        return sorted
     }
 
 }
